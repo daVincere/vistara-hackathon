@@ -27,6 +27,7 @@ mongo = PyMongo(app)
 def index():
 	return render_template('base.html', data='test')
 
+
 @app.route('/dashboard')
 def dashboard():
 	#present users to day
