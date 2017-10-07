@@ -1,12 +1,8 @@
 from flask import Flask, render_template, request, url_for, jsonify, make_response, session, redirect
 from functools import wraps
-import pyrebase
-import cloudinary
 import json
-import cloudinary.uploader
 from time import time
 from random import random
-import milestones as mls
 from flask_pymongo import PyMongo
 import bcrypt
 import os
@@ -20,16 +16,6 @@ config = {
 	"messagingSenderId": "800861923142"
 }
 
-cloudinary.config(
-  cloud_name = 'dglr3rxzz',  
-  api_key = '463868796246575',  
-  api_secret = 'YrBObQMCG_Ulo6dfdRfoQG-uCCM'  
-)
-
-firebase = pyrebase.initialize_app(config)
-firebase_auth = firebase.auth()
-db = firebase.database()
-
 app = Flask(__name__, static_url_path='/static')
 
 app.config['MONGO_DBNAME'] = 'abidbgac'
@@ -41,6 +27,46 @@ mongo = PyMongo(app)
 def index():
 	return render_template('index.html', data='test')
 
+@app.route('/dashboard')
+def dashboard():
+	#present users to day
+	analytics = []
+
+	userdata = {'Monday' : 2500, 'Tuesday' : 2100, 'Wednesday' : 3250, 'Thursday': 1900, 'Friday' : 2300, 'Saturday' : 4320, 'Sunday' : 5100}
+	route = {'from' : 'Delhi', 'to' : 'Mumbai', 'userdata' : userdata}
+
+	analytics.append(route)
+
+	return render_template('dashboard.html', analytics=analytics)
+
+app.route('/postfromapp', methods=['POST'])
+def post_from_app():
+	if request.method == "POST":
+		formdata = (request.form).to_dict()
+
+		#parse karna h isse
+		username = formdata['username']
+		route = formdata['route']
+		day = formdata['day']
+		price = formdata['price']
+		choice = formdata['choice']
+		score = formdata['score']
+
+		#leaderboard me add kar
+		
+
+		#user rank return karni h
+
+
+
+
+
+	
+
+
+'''
+
+'''
 
 if __name__ == "__main__":
 	app.secret_key = os.urandom(24)
