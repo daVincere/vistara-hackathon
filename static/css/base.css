@@ -1,0 +1,66 @@
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.home {
+	max-height: 45px;
+	max-width: 45px;
+}
+
+.home a:hover{
+	text-decoration: none;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav{
+	margin-top: 20px;
+}
+
+.nav-pills a{
+	font-weight: bold;
+	color: #00AADE;
+}
+
+.nav-pills a:hover {
+	color:#00769b;
+}
+
+section{
+	min-height: 100%;
+}
+
+
+footer 
+{	
+/*	position: absolute;*/
+/*	height: 70px;*/	
+	margin-top: 100px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+
+.footer-nav li
+{
+	display: inline;
+}
+
+.footer-nav li:not(:first-child):before
+{
+	content: '|';
+	padding: 0px 10px;
+}
+
+.footer-nav a 
+{
+	color:#999999;
+}
+
+.footer-nav a:hover 
+{
+	/*color : #fff;*/
+	
+	color: #00AADE;
+	text-decoration: none;
+}
