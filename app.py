@@ -126,7 +126,7 @@ def get_usersdata():
 
 
 
-	return ("GG")
+	return (jsonify(leaderboard))
 
 def get_leaderboard(data):
 
