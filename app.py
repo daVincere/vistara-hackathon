@@ -67,8 +67,8 @@ def post_from_app():
 
 				#append
 				_history = item['history']
-				h = {"date" : date, "score" : score}
-				_history.append(h)
+				h = [{"date" : date, "score" : score},]
+				_history.extend(h)
 
 				result = mongo.db.usersdata.update_one({"username" : item['username']}, {'$set' : {"username" : "lodu"}})
 
@@ -127,7 +127,7 @@ def get_usersdata():
 
 
 
-	return ("GG")
+	return (jsonify(leaderboard))
 
 def get_leaderboard(data):
 
