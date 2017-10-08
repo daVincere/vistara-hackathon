@@ -25,7 +25,8 @@ mongo = PyMongo(app)
 
 @app.route('/', methods=['GET'])
 def index():
-	return render_template('index.html', data='test')
+	return render_template('base.html', data='test')
+
 
 @app.route('/dashboard')
 def dashboard():
