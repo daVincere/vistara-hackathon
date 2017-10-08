@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context="io.github.rajdeep1008.nasscom.InputActivity">
+
+    <!--<com.airbnb.lottie.LottieAnimationView-->
+        <!--android:id="@+id/animation_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:lottie_fileName="Check_Mark_Success_Data.json"-->
+        <!--app:lottie_loop="true"-->
+        <!--app:lottie_autoPlay="true" />-->
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:layout_marginTop="16dp"/>
+
+    <Spinner
+        android:id="@+id/dest_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:entries="@array/from"/>
+
+    <Spinner
+        android:id="@+id/dest_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:entries="@array/to"/>
+
+</LinearLayout>
